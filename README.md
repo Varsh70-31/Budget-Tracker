@@ -204,12 +204,6 @@ If you encounter any issues or have questions:
 - [ ] Email notifications and reports
 - [ ] Data backup and restore features
 
-## 👨‍💻 Author
-
-Your Name - [@yourusername](https://github.com/yourusername)
-
-Project Link: [https://github.com/yourusername/personal-budget-tracker](https://github.com/yourusername/personal-budget-tracker)
-
 ---
 
 ⭐ If you found this project helpful, please consider giving it a star!
