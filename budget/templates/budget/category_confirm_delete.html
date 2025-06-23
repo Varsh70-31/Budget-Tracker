@@ -1,0 +1,17 @@
+{% extends "budget/base.html" %}
+{% block content %}
+<div class="container mx-auto max-w-lg">
+    <h1 class="text-3xl font-bold mb-6 text-gray-800">{{ title }}</h1>
+    <div class="bg-white p-8 rounded-lg shadow-lg">
+        <p class="text-lg mb-4">Are you sure you want to delete the category "<strong>{{ category.name }}</strong>"?</p>
+        <p class="text-sm text-yellow-600 bg-yellow-100 p-3 rounded-md mb-6">Warning: Deleting this category will set it to `null` on related transactions; they will not be deleted.</p>
+        <form method="post">
+            {% csrf_token %}
+            <div class="flex items-center justify-between">
+                <a href="{% url 'category_list' %}" class="bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-md hover:bg-gray-300">Cancel</a>
+                <button type="submit" class="bg-red-600 text-white font-bold py-2 px-4 rounded-md hover:bg-red-700">Yes, Delete</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

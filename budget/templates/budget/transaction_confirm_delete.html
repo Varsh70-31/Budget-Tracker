@@ -1,0 +1,23 @@
+{% extends "budget/base.html" %}
+{% block content %}
+<div class="container mx-auto max-w-lg">
+    <h1 class="text-3xl font-bold mb-6 text-gray-800">{{ title }}</h1>
+    <div class="bg-white p-8 rounded-lg shadow-lg">
+        <p class="text-lg mb-6">Are you sure you want to delete this transaction?</p>
+        <div class="border rounded-md p-4 mb-6">
+            <p><strong>Date:</strong> {{ transaction.date|date:"Y-m-d" }}</p>
+            <p><strong>Type:</strong> {{ transaction.get_type_display }}</p>
+            <p><strong>Amount:</strong> ${{ transaction.amount }}</p>
+            <p><strong>Category:</strong> {{ transaction.category.name|default:"N/A" }}</p>
+            <p><strong>Description:</strong> {{ transaction.description }}</p>
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            <div class="flex items-center justify-between">
+                <a href="{{ request.META.HTTP_REFERER|default_if_none:'dashboard' }}" class="bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-md hover:bg-gray-300">Cancel</a>
+                <button type="submit" class="bg-red-600 text-white font-bold py-2 px-4 rounded-md hover:bg-red-700">Yes, Delete</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

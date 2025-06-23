@@ -1,0 +1,20 @@
+{% extends "budget/base.html" %}
+{% block content %}
+<div class="container mx-auto max-w-lg">
+    <h1 class="text-3xl font-bold mb-6 text-gray-800">{{ title }}</h1>
+    <div class="bg-white p-8 rounded-lg shadow-lg">
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-6">
+                <label for="{{ form.name.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                {{ form.name }}
+                {% for error in form.name.errors %}<p class="text-red-500 text-xs mt-1">{{ error }}</p>{% endfor %}
+            </div>
+            <div class="flex items-center justify-between">
+                <a href="{% url 'category_list' %}" class="text-gray-600 hover:text-gray-800">Cancel</a>
+                <button type="submit" class="bg-indigo-600 text-white font-bold py-2 px-4 rounded-md hover:bg-indigo-700">Save Changes</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
