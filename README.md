@@ -61,20 +61,6 @@ A clean, modern Django web application for tracking personal income and expenses
 
 7. **Open your browser** and navigate to `http://127.0.0.1:8000`
 
-## 📱 Screenshots
-
-### Dashboard
-The main dashboard provides a clear overview of your financial status with summary cards and recent transactions.
-
-### Transaction Management
-- Add new income or expense transactions
-- Filter by transaction type or category
-- View detailed transaction history
-
-### Category Management
-- Create custom categories for better organization
-- Edit or delete existing categories
-- Categories help organize transactions meaningfully
 
 ## 🛠️ Technology Stack
 
